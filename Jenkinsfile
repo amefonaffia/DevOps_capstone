@@ -12,7 +12,7 @@ pipeline {
 			steps {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
-						sudo -n docker build -t amefonaffia/amycapstonecluster .
+						sudo docker build -t amefonaffia/amycapstonecluster .
 					'''
 				}
 			}
