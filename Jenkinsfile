@@ -12,7 +12,7 @@ pipeline {
 			steps {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
-						sudo docker build -t amefonaffia/amycapstonecluster .
+						sudo docker build -t amefonaffia/capstonecluster .
 					'''
 				}
 			}
@@ -23,7 +23,7 @@ pipeline {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
 						sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD 
-						sudo docker push amefonaffia/amycapstonecluster
+						sudo docker push amefonaffia/capstonecluster
 					'''
 				}
 			}
@@ -33,7 +33,7 @@ pipeline {
 				withAWS(region:'us-east-2', credentials:'aws-credentials') {
 					sh '''
 						kubectl config get-contexts
-						kubectl config use-context  arn:aws:eks:us-east-2:493716690734:cluster/amycapstonecluster
+						kubectl config use-context  arn:aws:eks:us-east-2:493716690734:cluster/capstonecluster
 					'''
 				}
 			}
