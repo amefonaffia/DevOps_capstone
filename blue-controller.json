@@ -22,7 +22,7 @@
             "containers":[
                {
                   "name":"blue",
-                  "image":"mehmetincefidan/capstone",
+                  "image":"amefonaffia/amycapstonecluster",
                   "ports":[
                      {
                         "name":"http-server",
