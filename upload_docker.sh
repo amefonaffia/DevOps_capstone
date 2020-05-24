@@ -7,7 +7,7 @@
 # Step 1:
 # Create dockerpath
 # dockerpath=<your docker ID/path>
-export dockerpath="amefonaffia/amycapstonecluster"
+export dockerpath="amefonaffia/capstonecluster"
 
 # Step 2:
 # Authenticate & tag
