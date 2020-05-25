@@ -1,4 +1,12 @@
 #!/bin/bash
+sudo apt-get update && sudo apt-get -y upgrade
+sudo apt-get -y install default-jdk
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9B7D32F2D50582E6
+sudo apt-get update && sudo apt-get -y install jenkins && sudo systemctl start jenkins && sudo systemctl enable jenkins
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
 sudo apt update && sudo apt -y install docker.io && sudo systemctl start docker && sudo systemctl enable docker && sudo apt update && sudo apt -y install tidy && sudo chmod 666 /var/run/docker.sock
 apt-get update && apt-get install unzip awscli -y
 apt-get install apache2 -y
