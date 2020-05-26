@@ -11,6 +11,8 @@ This project shows skills of the following;
 * Building Docker containers in pipelines
 * Blueocean on Jenkins
 
+![alt text](https://github.com/amefonaffia/DevOps_capstone/blob/master/pipelinescreenshot.JPG?raw=true)
+---
 ## Static Website
 
 Can be found in <**loadbalancer_domain:port**>
