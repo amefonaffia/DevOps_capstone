@@ -28,7 +28,7 @@ An otherwise unsafe method as it will not require password for ALL commands from
 * add `jenkins ALL=(ALL) NOPASSWD: ALL`
 
 2. For "**error: no context exists with the name:**". This is most likely because your jenkins user does not have permissions to access context files. I updated file [Jenkins machine file](infra_jenkins.sh) to switch to jenkins user earlier in kubectl configurations. However, for this error, on the jenkins machine;
-* switch user to jenkins `sudo su -jenkins`
+* switch user to jenkins `sudo su -jenkins` (this is the user you are logged into from jenkins UI)
 * run aws configure `aws configure`
 * enable kubectl to run with jenkins user `sudo chmod u+x /kubectl/./kubectl` 
 * then update kubeconfig `aws eks --region <region> update-kubeconfig --name <clustername>` 
