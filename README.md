@@ -30,7 +30,7 @@ To collect information on loadbalancer domain:port, run `sudo kubectl describe s
 
 An otherwise unsafe method as it will not require password for ALL commands from the jenkins user,
 * edit sudoers file `sudo nano /etc/sudoers` or gedit.
-* add `jenkins ALL=(ALL) NOPASSWD: ALL`
+* add `jenkins ALL=(ALL) NOPASSWD: ALL` under the section "# Allow members of group sudo to execute any command"
 
 2. For "**error: no context exists with the name:**". This is most likely because your jenkins user does not have permissions to access context files. I updated file [Jenkins machine file](infra_jenkins.sh) to switch to jenkins user earlier in kubectl configurations. However, for this error, on the jenkins machine;
 * switch user to jenkins `sudo -su jenkins` (this is the user you are logged into from jenkins UI)
