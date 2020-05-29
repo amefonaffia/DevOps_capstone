@@ -16,7 +16,7 @@ This project shows skills of the following;
 ---
 ## Static Website
 
-Can be found in <**loadbalancer_domain:port**>
+Hosted site URL format is <**loadbalancer_domain:port**>
 
 To collect information on loadbalancer domain:port, run `sudo kubectl describe service` on jenkins machine.
 
